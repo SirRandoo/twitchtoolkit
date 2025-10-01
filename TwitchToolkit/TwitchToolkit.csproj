@@ -9,18 +9,22 @@
     <!-- Local references -->
     <ItemGroup>
         <Reference Include="ToolkitCore">
-            <HintPath>$(ToolkitCoreDir)\v1.6\Assemblies\ToolkitCore.dll</HintPath>
+            <Private>false</Private>
         </Reference>
         <Reference Include="TwitchLib.Client">
+            <Private>false</Private>
             <HintPath>$(ToolkitCoreDir)\Assemblies\TwitchLib.Client.dll</HintPath>
         </Reference>
         <Reference Include="TwitchLib.Client.Enums">
+            <Private>false</Private>
             <HintPath>$(ToolkitCoreDir)\Assemblies\TwitchLib.Client.Enums.dll</HintPath>
         </Reference>
         <Reference Include="TwitchLib.Client.Models">
+            <Private>false</Private>
             <HintPath>$(ToolkitCoreDir)\Assemblies\TwitchLib.Client.Models.dll</HintPath>
         </Reference>
         <Reference Include="TwitchLib.Communication">
+            <Private>false</Private>
             <HintPath>$(ToolkitCoreDir)\Assemblies\TwitchLib.Communication.dll</HintPath>
         </Reference>
     </ItemGroup>
