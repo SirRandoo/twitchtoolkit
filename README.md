@@ -60,6 +60,8 @@ you:
 
 - `ToolkitCoreDir` is a property that points to the directory where your copy of ToolkitCore is located.
 - `SteamRootDir` is a property that points to the directory where your copy of Steam is located.
+- `RootDestinationDir` is a property that points to the directory where you’ll house your compiled copy of Twitch Toolkit. The build process will insert a valid "vX.X\Assemblies" subdirectory at build time.
+- `RimWorldModsDir` is a property that points to the directory where your mods folder of RimWorld is located.
 
 You may set either of these properties at build time in your IDE, or through the command line:
 
