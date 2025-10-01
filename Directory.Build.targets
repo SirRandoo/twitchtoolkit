@@ -89,8 +89,7 @@
             <_VersionedFolder Condition="$(PreferPrefixedVersionMatrixes)">v$(_RimWorldVersionMajorMinor)</_VersionedFolder>
             <_VersionedFolder Condition="!$(PreferPrefixedVersionMatrixes)">$(_RimWorldVersionMajorMinor)</_VersionedFolder>
             
-            <_DestinationDir>$([System.IO.Path]::Combine(.., $(_VersionedFolder), Assemblies))</_DestinationDir>
-            <_DestinationDir Condition="Exists('$(RimWorldModsDir)')">$([System.IO.Path]::Combine($(RimWorldModsDir), $(Product), $(_VersionedFolder), Assemblies))</_DestinationDir>
+            <_DestinationDir>$([System.IO.Path]::Combine($(RootDestinationDir), $(_VersionedFolder), Assemblies))</_DestinationDir>
             <_DestinationDir>$([MSBuild]::NormalizeDirectory('$(_DestinationDir)'))</_DestinationDir>
         </PropertyGroup>
         
