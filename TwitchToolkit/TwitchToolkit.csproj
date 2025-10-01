@@ -23,7 +23,7 @@
         <Product>Twitch Toolkit</Product>
         <Company>Toolkit Community</Company>
         <Authors>Finally, hodlhodl, Toolkit Community</Authors>
-        <Copyright>Copyright (c) $([System.DateTime]::Now.ToString("yyyy")) hodlhodl and contributors</Copyright>
+        <Copyright>Copyright (c) $([System.DateTime]::Now.ToString("yyyy")) Finally, hodlhodl, and contributors</Copyright>
         <Description>Twitch Toolkit is a mod for RimWorld, originally based on TwitchStories by Finally. It's was significantly modified by hodlhodl and is now maintained by the Toolkit Community.</Description>
         
         <RepositoryUrl>https://github.com/harleyknd1/twitchtoolkit</RepositoryUrl>
