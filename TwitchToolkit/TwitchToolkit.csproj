@@ -1,33 +1,65 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <AssemblyName>TwitchToolkit</AssemblyName>
-    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
-    <TargetFramework>net472</TargetFramework>
-  </PropertyGroup>
-  <PropertyGroup>
-    <LangVersion>Preview</LangVersion>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4495-beta" />
-    <PackageReference Include="Lib.Harmony" Version="2.3.1.1" />
-    <PackageReference Include="MoonSharp" Version="2.0.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ToolkitCore">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ToolkitCore\Assemblies\ToolkitCore.dll</HintPath>
-    </Reference>
-    <Reference Include="TwitchLib.Client">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ToolkitCore\Assemblies\TwitchLib.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="TwitchLib.Client.Enums">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ToolkitCore\Assemblies\TwitchLib.Client.Enums.dll</HintPath>
-    </Reference>
-    <Reference Include="TwitchLib.Client.Models">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ToolkitCore\Assemblies\TwitchLib.Client.Models.dll</HintPath>
-    </Reference>
-    <Reference Include="TwitchLib.Communication">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ToolkitCore\Assemblies\TwitchLib.Communication.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+    <!-- Compiler metadata -->
+    <PropertyGroup>
+        <LangVersion>Preview</LangVersion>
+        <TargetFramework>net472</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    </PropertyGroup>
+    
+    <!-- Product information -->
+    <PropertyGroup>
+        <Version>2.0.10</Version>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <PackageLicenseExpression>AGPL-3.0-only</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageLicenseUrl>https://licenses.nuget.org/AGPL-3.0-only</PackageLicenseUrl>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <Product>Twitch Toolkit</Product>
+        <Company>Toolkit Community</Company>
+        <Authors>Finally, hodlhodl, Toolkit Community</Authors>
+        <Copyright>Copyright (c) $([System.DateTime]::Now.ToString("yyyy")) hodlhodl and contributors</Copyright>
+        <Description>Twitch Toolkit is a mod for RimWorld, originally based on TwitchStories by Finally. It's was significantly modified by hodlhodl and is now maintained by the Toolkit Community.</Description>
+        
+        <RepositoryUrl>https://github.com/harleyknd1/twitchtoolkit</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+    
+    <!-- Package references -->
+    <ItemGroup>
+        <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4495-beta"/>
+        <PackageReference Include="Lib.Harmony" Version="2.3.1.1"/>
+        <PackageReference Include="MoonSharp" Version="2.0.0"/>
+    </ItemGroup>
+    
+    <!-- Local references -->
+    <PropertyGroup>
+        <!-- Developers may overwrite these properties at build time to point to relevant directories. -->
+        <SteamRootDir>..\..\..\..\..\..\..\Program Files (x86)\Steam</SteamRootDir>
+        <ToolkitCoreDir>$(SteamRootDir)\steamapps\common\RimWorld\Mods\ToolkitCore</ToolkitCoreDir>
+        <ToolkitCoreDir Condition="!Exists('$(ToolkitCoreDir)')">$(SteamRootDir)\steamapps\workshop\content\294100\3013877477</ToolkitCoreDir>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Reference Include="ToolkitCore">
+            <HintPath>$(ToolkitCoreDir)\v1.6\Assemblies\ToolkitCore.dll</HintPath>
+        </Reference>
+        <Reference Include="TwitchLib.Client">
+            <HintPath>$(ToolkitCoreDir)\Assemblies\TwitchLib.Client.dll</HintPath>
+        </Reference>
+        <Reference Include="TwitchLib.Client.Enums">
+            <HintPath>$(ToolkitCoreDir)\Assemblies\TwitchLib.Client.Enums.dll</HintPath>
+        </Reference>
+        <Reference Include="TwitchLib.Client.Models">
+            <HintPath>$(ToolkitCoreDir)\Assemblies\TwitchLib.Client.Models.dll</HintPath>
+        </Reference>
+        <Reference Include="TwitchLib.Communication">
+            <HintPath>$(ToolkitCoreDir)\Assemblies\TwitchLib.Communication.dll</HintPath>
+        </Reference>
+    </ItemGroup>
 </Project>
